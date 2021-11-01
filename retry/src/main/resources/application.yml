@@ -1,0 +1,8 @@
+resilience4j.retry:
+           instances:
+             sample-api:
+                 maxAttempts: 7
+                 waitDuration: 10s
+                 retryExceptions:
+                      - java.lang.NullPointerException
+                      - org.springframework.web.client.HttpServerErrorException
