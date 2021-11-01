@@ -27,16 +27,9 @@ public class RetryController {
 	@Retry(name = "sample-api")
 	public String sampleApi() {
 		log.info("Sample Api call receieved");
-		/*
-		 * ResponseEntity<String> forEntity = new
-		 * RestTemplate().getForEntity("http://localhost:8080/some-dummy-url",
-		 * String.class);
-		 */
 		if (true) {
 			throw new org.springframework.web.client.HttpServerErrorException(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-
-//		return forEntity.getBody();
-		return "test";
+		return "success";
 	}
 }
